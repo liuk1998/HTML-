@@ -1,20 +1,87 @@
 <!--
  * @Author: your name
  * @Date: 2022-02-07 10:40:17
- * @LastEditTime: 2022-02-07 11:23:54
+ * @LastEditTime: 2022-02-07 17:51:32
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /HTML-/index.html
 -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html> <!-- 声明为 HTML5 文档 -->
+<html lang="en"> <!-- <html> 为 HTML 的根元素 -->
+<head> <!-- <head> 为 HTML 的头部元素，包含了文档的元数据（meta），定义网页编码格式为 UTF-8(国际编码，通用性强) -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HTML</title>
+  <title>HTML基础</title> <!-- <title> 描述了文档的标题 -->
 </head>
-<body>
-  <abbr title="title属性的内容">这里是abbr标签：带虚线，移入显示title属性的内容。</abbr>
+<body> <!-- <body> 包含了可见的页面内容 -->
+
+  <!-- 标题标签。通过<h1> - <h6>来定义。块标签 -->
+  <h1>标题标签:h1</h1>
+  <h2>标题标签:h2</h2>
+  <h3>标题标签:h3</h3>
+  <h4>标题标签:h4</h4>
+  <h5>标题标签:h5</h5>
+  <h6>标题标签:h6</h6>
+
+  <!-- 段落是通过标签 <p> 来定义的。块标签 -->
+  <p>段落标签: p</p>
+
+  <!-- 链接是通过标签 <a> 来定义的。 行标签  href属性来描述链接的地址。 使用 target 属性，你可以定义被链接的文档在何处显示(_blank:新窗口、_self:默认当前窗口)。行标签 -->
+  <a href="https://www.runoob.com/html/html-basic.html" target="_blank">链接标签: a</a>
+
+  <!-- 图像是通过标签 <img> 来定义的。行标签  src的值是图像的 URL 地址。 alt 属性用来为图像定义一串预备的可替换的文本。 height 与 width 属性用于设置图像的高度与宽度。行标签 -->
+  <img src="/image/WechatIMG3.jpeg" width="10%" alt="我的头像">
+
+  <!-- 格式化标签 (粗体、斜体) 行标签 -->
+  <strong>粗体标签: b</strong>
+  <em>斜体标签: i</em>
+
+  <!-- 表格由 <table> 标签来定义。块标签 每个表格行由 <tr> 标签定义，每行被分割为若干单元格（由 <td> 标签定义）。表格的表头使用 <th> 标签进行定义。 -->
+  <table border="1">
+    <tr>
+      <th>姓名</th>
+      <th>年龄</th>
+    </tr>
+    <tr>
+      <td>刘可</td>
+      <td>24</td>
+    </tr>
+  </table>
+
+  <!-- 无序列表使用 <ul> 标签来定义的。块标签 -->
+  <ul>
+    <li>无序列表1</li>
+    <li>无序列表2</li>
+  </ul>
+
+  <!-- 有序列表使用 <ol> 标签来定义的。块标签 -->
+  <ol>
+    <li>有序列表1</li>
+    <li>有序列表2</li>
+  </ol>
+
+  <!-- 自定义列表以 <dl> 标签开始。每个自定义列表项以 <dt> 开始。每个自定义列表项的定义以 <dd> 开始。块标签 -->
+  <dl>
+    <dt>自定义列表1</dt>
+      <dd>自定义值1</dd>
+    <dt>自定义列表2</dt>
+      <dd>自定义值2</dd>
+  </dl>
+
+  <!-- 区块元素使用 <div> 标签(块标签)、<span> 标签(行标签)来定义的。 -->
+  <div>区块标签--div</div>
+  <span>区块标签--span</span>
+
+  <!-- 表单使用表单标签 <form> 来设置。action 定义了目的文件的文件名。method 属性是提交方式。多数情况下被用到的表单标签是输入标签（<input> 行标签）。 输入类型是由类型属性（type）定义的。 -->
+  <form action="" method="get">
+    <!-- 文本域 -->
+    用户名: <input type="text" name="username">
+    <!-- 密码字段 -->
+    密码: <input type="password" name="password">
+    <!-- 单选框 -->
+    性别: <input type="radio" name="sex" value="男">男
+    <input type="radio" name="sex" value="女">女
+  </form>
 </body>
 </html>
