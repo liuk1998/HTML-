@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-02-07 10:40:17
- * @LastEditTime: 2022-02-07 14:41:50
+ * @LastEditTime: 2022-02-07 16:03:21
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /HTML-/index.html
@@ -17,14 +17,50 @@
 </head>
 
 <body>
-  <!-- <abbr> 标签指示简称或缩写, 使用title属性, 展示额外信息-->
+  <!-- 1.<abbr> 标签指示简称或缩写, 使用title属性, 展示额外信息-->
   abbr标签：<abbr title="Hello!World">HW</abbr>
+
   <hr>
-  <!-- 当您希望用户下载链接而不是导航到文件时，下载属性非常有用。 此外，您还可以设置用户将下载的文件的文件名 -->
+
+  <!-- 2.当您希望用户下载链接而不是导航到文件时，下载属性非常有用。 此外，您还可以设置用户将下载的文件的文件名 -->
   下载链接：<a href="/image/WechatIMG3.jpeg" download="我的头像">我的头像</a>
+
   <hr>
-  <!-- 规定在文本中的何处适合添加换行符。 -->
+
+  <!-- 3.规定在文本中的何处适合添加换行符。 -->
   添加换行符：<p>这条微博的文字<wbr>非常非常非常非常非常非常非常非常非常非常非常非常非常非常<wbr>长</p>
+
+  <hr>
+
+  <!-- 4.创建一个非常基本但很容易的手风琴。将accordion元素与details元素打包，而标题则使用summary元素。最后，使用p段落元素来编写手风琴的主要内容。 -->
+  <details>
+    <summary>手风琴标题</summary>
+    <p>手风琴内容</p>
+  </details>
+
+  <hr>
+
+  <!-- 5.通过将contenteditable属性设置为true，可以使任何内容都可编辑。 不管它是div还是p，它都是可编辑的。 此外，还可以使用isContentEditable属性来查找某个元素是否可编辑。 -->
+  <p contenteditable="true" id="setP">是否可编辑</p>
+
+  <hr>
+
+  <!-- 6.你可以通过设置加载属性为“lazy”来按需加载图片(也叫惰性加载)。 这是一种简单但非常有效的优化技术，只加载对用户可见的部分，其他图像稍后根据用户的需要加载。 -->
+  <img src="/image/WechatIMG3.jpeg" alt="我的头像" width="10%" loading="lazy">
+
+  <hr>
+
+  <!-- 7.如果您不希望用户能够粘贴到密码等某些字段上，则可以在该输入字段上写入Onpaste =“返回false”，用户将无法粘贴到那里。 -->
+  <input type="text" onpaste="return false" value="这个我设置了属性，你无法粘贴。">
+
+  <hr>
+
+  <!-- 8.当设置为 true 时，拼写检查属性会告诉浏览器必须检查用户在此元素中输入的语法和拼写错误。 这是一个方便的属性，可帮助用户编写正确无误的内容。 -->
+  <p contenteditable="true" spellcheck="true">I am LiuKe.</p>
+
+  <script>
+    console.log('%c第5条的p标签是否可编辑', 'color: green', document.getElementById('setP').isContentEditable);
+  </script>
 </body>
 
 </html>
