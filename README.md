@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-02-07 14:43:28
- * @LastEditTime: 2022-02-08 16:58:53
+ * @LastEditTime: 2022-02-08 19:51:25
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /HTML-/README.md
@@ -24,7 +24,9 @@
 ### 4.HTML与HTML5的区别:
 #### (1)文档声明区别: 目前用的都是HTML5的声明方式。
 #### (2)结构语义区别: 添加了许多具有语义化的标签，如：audio标签、video标签等。
-#### (2)结构语义区别: 添加了许多具有语义化的标签
+#### (3)绘图区别: HTML5增加了canvas标签(必须使用脚本来绘制图形)。
+#### (4)音频、视频的支持: HTML如果不使用Flash播放器支持的话，它不支持音频与视频。HTML5增加了audio标签与video标签来支持。
+
 
 
 
