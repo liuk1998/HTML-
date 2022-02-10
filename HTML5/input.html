@@ -1,0 +1,64 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-02-10 15:26:44
+ * @LastEditTime: 2022-02-10 17:42:27
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /HTML-/HTML5/input.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML5基础 - input</title>
+</head>
+
+<body>
+  <!--
+    autofocus 属性, 规定在页面加载时，域自动地获得焦点。
+    formaction 属性, 用于描述表单提交的URL地址。会覆盖<form> 元素中的action属性。用于 type="submit" 和 type="image"。
+    formmethod 属性, 定义了表单提交的方式。会覆盖了 <form> 元素的 method 属性。用于 type="submit" 和 type="image"。
+    min、max 属性, 适用于以下类型的 <input> 标签：date pickers、number 以及 range。
+    placeholder 属性提供一种提示，描述输入域所期待的值。简短的提示在用户输入值前会显示在输入域上。
+    required 属性规定必须在提交之前填写输入域（不能为空）。
+  -->
+
+  <form action="video.html" method="get">
+    <!-- 拾色器 -->
+    拾色器: <input type="color" name="" id="" style="width: 200px; height: 70px;"> <hr>
+
+    <!-- 时间控制器 -->
+    时间控制器: <input type="date"> <hr>
+
+    <!-- 日期和时间 -->
+    日期和时间: <input type="datetime-local"> <hr>
+
+    <!-- E-mail, 在提交表单时，会自动验证 email 域的值是否合法有效。 -->
+    E-mail: <input type="email" placeholder="请输入正确的email格式" required> <hr>
+
+    <!-- 月份 -->
+    月份: <input type="month"> <hr>
+
+    <!-- 数值输入 -->
+    数值输入: <input type="number" min="10" max="100" autofocus> <hr>
+
+    <!-- 数值输入 - 滑动条 -->
+    数值输入-滑动条: <input type="range" min="10" max="100"> <hr>
+
+    <!-- 时间 -->
+    时间: <input type="time" name="" id=""> <hr>
+
+    <!-- 周和年 -->
+    周和年: <input type="week" name="" id=""> <hr>
+
+    <input type="submit" value="提交">
+    <input type="submit" value="提交二次" formaction="canvas.html" formmethod="post">
+
+  </form>
+
+</body>
+
+</html>
