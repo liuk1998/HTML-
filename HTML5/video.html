@@ -1,20 +1,101 @@
 <!--
  * @Author: your name
  * @Date: 2022-02-09 15:58:24
- * @LastEditTime: 2022-02-09 16:02:23
+ * @LastEditTime: 2022-02-10 15:14:52
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /HTML-/HTML5/video.html
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HTML5基础 - video</title>
 </head>
+
 <body>
-  <video src="" width="50" height="30"></video>
+
+  <!-- <video> 元素提供了 播放、暂停和音量控件来控制视频。提供了 width 和 height 属性控制视频的尺寸。-->
+  <video src="/video/夜晚城市下雨的街道上公交车开过_爱给网_aigei_com.mp4" width="200" height="150" id="myVideo"></video>
+
+  <!-- <video> 元素支持多个 <source> 元素. <source> 元素可以链接不同的视频文件。当前, <video> 元素支持三种视频格式: MP4, WebM, 和 Ogg。 -->
+  <!--
+    autoplay属性，启用自动播放。
+    controls属性，设置或返回音频/视频是否显示控件（比如播放/暂停等）。
+    muted属性，关闭视频的声音。
+    loop属性，开启循环播放。
+    src属性，设置或返回音频/视频元素的当前来源。
+  -->
+  <video width="200" height="150" autoplay controls muted loop>
+    <source src="/video/夜晚城市下雨的街道上公交车开过_爱给网_aigei_com.mp4" type="video/mp4">
+  </video>
+
+  <div>
+    <button id="play">播放/暂停</button>
+    <button id="testing">检测浏览器是否能播放</button>
+    <button id="loading">重载视频</button>
+    <button id="time">重置播放位置</button>
+    <button id="speed">4倍播放速度</button>
+    <button id="volume">0.5倍播放音量</button>
+  </div>
+
+  <script>
+    const myVideo = document.getElementById('myVideo');
+    const playBtn = document.getElementById('play');
+    const testBtn = document.getElementById('testing');
+    const loadBtn = document.getElementById('loading');
+    const timeBtn = document.getElementById('time');
+    const speedBtn = document.getElementById('speed');
+    const volumeBtn = document.getElementById('volume');
+
+    // play()方法 开始播放音频/视频。 pause()方法 暂停当前播放的音频/视频。
+    playBtn.onclick = () => {
+      if(myVideo.paused) {
+        myVideo.play();
+        /** currentSrc属性, 返回当前音频/视频的 URL。
+         *  duration属性, 返回当前音频/视频的长度，以秒计。
+         *  paused属性, 检查视频是否已暂停。
+        */
+        console.log('视频的URL为: ', myVideo.currentSrc, '视频的时长为: ', myVideo.duration);
+      } else {
+        myVideo.pause();
+      };
+    };
+
+    /** canPlayType()方法 检测浏览器是否能播放指定的音频/视频类型。
+     * 返回值："probably" - 浏览器最可能支持该音频/视频类型。
+              "maybe" - 浏览器也许支持该音频/视频类型。
+              "" - （空字符串）浏览器不支持该音频/视频类型。
+    */
+    testBtn.onclick = () => console.log(myVideo.canPlayType('video/mp4'));
+
+    // load()方法 重新加载音频/视频（audio/video）元素。
+    loadBtn.onclick = () => myVideo.load();
+
+    timeBtn.onclick = () => myVideo.currentTime = 0; // currentTime属性，设置或返回音频/视频中的当前播放位置（以秒计）。
+
+    speedBtn.onclick = () => myVideo.playbackRate = 4; // playbackRate属性，设置或返回音频/视频播放的速度。
+
+    volumeBtn.onclick = () => myVideo.volume = 0.5; // volume属性，设置或返回音频/视频的音量。
+
+    myVideo.oncanplay = () => console.log('视频已准备好'); // canplay事件，当浏览器可以开始播放音频/视频时触发。
+
+    myVideo.onpause = () => console.log('视频已暂停播放'); // pause事件，当音频/视频已暂停时触发。play事件，当音频/视频播放时触发。
+
+    myVideo.onratechange = () => { // ratechange事件，当音频/视频的播放速度已更改时触发。
+      console.log('视频播放速度已更改为: ', myVideo.playbackRate);
+    };
+
+    myVideo.onvolumechange = () => { // volumechange事件，当音量已更改时触发。
+      console.log('视频播放音量已更改为: ', myVideo.volume);
+    };
+
+    myVideo.onwaiting = () => console.log('视频正在缓冲...'); // 当视频由于需要缓冲下一帧而停止时触发。
+
+  </script>
 </body>
+
 </html>
