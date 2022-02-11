@@ -1,0 +1,86 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-02-11 11:13:20
+ * @LastEditTime: 2022-02-11 16:22:15
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /HTML-/HTML5/event.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML5基础 - 事件</title>
+</head>
+<body onload="load()" onresize="resize()">
+
+  <form action="" onsubmit="send()">
+    <label for="name">用户名: </label>
+    <input type="text" name="username" placeholder="用户名" id="name" onblur="loseFocus()" onfocus="getFocus()" onchange="change(this.value)">
+    <label for="password">密码: </label>
+    <input type="password" name="password" placeholder="密码" id="password" onkeydown="keydown()" required>
+    <button>提交</button>
+  </form>
+
+  <img src="/image/WechatIMG3.jpeg" width="20%" alt="" onmouseenter="enter()" onmouseleave="leave()">
+
+  <button onclick="btnClick()" ondblclick="doubleClick()" ondrag="drag()" draggable="true">按钮</button>
+
+  <script>
+    /**窗口事件属性: 适用于 <body> 标签*/
+    function load() {
+      console.log('onload窗口事件属性: 在页面完全载入后触发。');
+    };
+    function resize() {
+      console.log('onresize窗口事件属性: 调整窗口大小时触发。');
+    };
+
+    /**表单事件属性: 在HTML表单中触发 (适用于所有 HTML 元素, 但该HTML元素需在form表单内)*/
+    function loseFocus() {
+      console.log('onblur表单事件属性: 当元素失去焦点时触发。');
+    };
+    function getFocus() {
+      console.log('onfocus表单事件属性: 当元素获得焦点时触发。');
+    };
+    function change(value) {
+      console.log('onchange表单事件属性: 当元素值改变时触发。', value);
+    };
+    function send() {
+      console.log('onsubmit表单事件属性: 当表单提交时触发。只适用于 <form> 元素。');
+    };
+
+    /**键盘事件属性。 没举例: onkeypress键盘事件属性: 当按下并松开按键时触发。onkeyup键盘事件属性: 当松开按键时触发。*/
+    function keydown() {
+      console.log('onkeydown键盘事件属性: 当按下按键时触发。');
+    };
+
+    /**鼠标事件属性: 通过鼠标触发事件。
+     * 没举例: onmousewheel事件: 当转动鼠标滚轮时触发。
+     *        onscroll事件: 当滚动元素的滚动条时触发。
+     *        onmousemove事件: 当鼠标指针移动时触发。
+     *        onmousedown事件: 当按下鼠标按钮时触发。
+     *        onmouseup事件: 当松开鼠标按钮时触发。
+     *        ondragstart事件: 当拖动操作开始时触发。
+     *        ondragend事件: 当拖动操作结束时触发。
+     * */
+    function btnClick() {
+      console.log('onclick鼠标事件属性: 当单击鼠标时触发。');
+    };
+    function doubleClick() {
+      console.log('ondblclick鼠标事件属性: 当双击鼠标时触发。');
+    };
+    function drag() {
+      console.log('ondrag鼠标事件属性: 当拖动元素时触发。');
+    };
+    function enter() {
+      console.log('onmouseenter鼠标事件属性: 当鼠标指针移入时触发。');
+    };
+    function leave() {
+      console.log('onmouseleave鼠标事件属性: 当鼠标指针移出时触发。');
+    };
+  </script>
+
+</body>
+</html>
