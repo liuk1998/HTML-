@@ -1,11 +1,3 @@
-<!--
- * @Author: your name
- * @Date: 2022-02-11 11:13:20
- * @LastEditTime: 2022-02-11 16:22:15
- * @LastEditors: Please set LastEditors
- * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- * @FilePath: /HTML-/HTML5/event.html
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +10,7 @@
 
   <form action="" onsubmit="send()">
     <label for="name">用户名: </label>
-    <input type="text" name="username" placeholder="用户名" id="name" onblur="loseFocus()" onfocus="getFocus()" onchange="change(this.value)">
+    <input type="text" name="username" placeholder="用户名" id="name" onblur="loseFocus()" onfocus="getFocus()" onchange="change(this.value)" oninput="write(this.value)">
     <label for="password">密码: </label>
     <input type="password" name="password" placeholder="密码" id="password" onkeydown="keydown()" required>
     <button>提交</button>
@@ -44,8 +36,12 @@
     function getFocus() {
       console.log('onfocus表单事件属性: 当元素获得焦点时触发。');
     };
+    // oninput:元素值发生变化是立即触发; onchange:在元素失去焦点时触发;
     function change(value) {
       console.log('onchange表单事件属性: 当元素值改变时触发。', value);
+    };
+    function write(value) {
+      console.log('oninput表单事件属性: 当输入时触发。', value);
     };
     function send() {
       console.log('onsubmit表单事件属性: 当表单提交时触发。只适用于 <form> 元素。');
