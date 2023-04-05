@@ -7,16 +7,16 @@
   <title>HTML5基础 - 事件</title>
 </head>
 <body onload="load()" onresize="resize()">
-
-  <form action="" onsubmit="send()">
+  <form action="#" onsubmit="send()">
     <label for="name">用户名: </label>
-    <input type="text" name="username" placeholder="用户名" id="name" onblur="loseFocus()" onfocus="getFocus()" onchange="change(this.value)" oninput="write(this.value)">
+    <!-- oninput="write(this.value)"  -->
+    <input type="text" name="username" placeholder="用户名" id="name" onblur="loseFocus()" onfocus="getFocus()" onchange="change(this.value)">
     <label for="password">密码: </label>
     <input type="password" name="password" placeholder="密码" id="password" onkeydown="keydown()" required>
     <button>提交</button>
   </form>
 
-  <img src="/image/WechatIMG3.jpeg" width="20%" alt="" onmouseenter="enter()" onmouseleave="leave()">
+  <img src="../image/WechatIMG3.jpeg" width="20%" alt="" onmouseenter="enter()" onmouseleave="leave()">
 
   <button onclick="btnClick()" ondblclick="doubleClick()" ondrag="drag()" draggable="true">按钮</button>
 

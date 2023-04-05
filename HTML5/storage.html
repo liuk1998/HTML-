@@ -35,7 +35,7 @@
       localStorage.webName = '刘可在复习web存储。';
       box.innerHTML = localStorage.webName;
       setTimeout(() => {
-        localStorage.removeItem('webName');
+        console.log(localStorage.getItem('webName'))
         box.innerHTML = localStorage.webName;
       }, 2000);
     };
